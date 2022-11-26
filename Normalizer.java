@@ -70,11 +70,11 @@ public class Normalizer {
            System.out.println("Right Schema: "+ right.toString());
            System.out.println("  Right Schema's superkeys = " + findSuperkeys(right, rightFD));
            
-           Set<Set<String>> schema = new HashSet<Set<String>>();
-           schema.addAll(BCNFDecompose(left, leftFD));
-           schema.addAll(BCNFDecompose(right, rightFD));
+           Set<Set<String>> finBCNF = new HashSet<Set<String>>();
+           finBCNF.addAll(BCNFDecompose(left, leftFD));
+           finBCNF.addAll(BCNFDecompose(right, rightFD));
            System.out.println("BCNF End");
-          return schema;
+          return finBCNF;
         }
      }
      return null;
